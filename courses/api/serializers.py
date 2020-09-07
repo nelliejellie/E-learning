@@ -6,12 +6,13 @@ class ModuleSerializer(serializers.ModelSerializer):
         model = Module
         fields = ['order', 'title', 'description']
 
+# creating a model serializer for the course
 class SubjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subject
         fields = ['id', 'title', 'slug']
 
-# creating a model serializer for the course
+# creating a nested module serializer for the course
 class CoursesSerializer(serializers.ModelSerializer):
     modules = ModuleSerializer(many=True, read_only=True)
 
