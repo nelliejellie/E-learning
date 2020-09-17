@@ -25,4 +25,4 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['title', 'overview']
     prepopulated_fields = {'slug': ('title',)}
     # combining the module with the course model
-    inlines = [ModuleInline]
+    #inlines = [ModuleInline]
